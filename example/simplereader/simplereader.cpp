@@ -41,4 +41,4 @@ int simple_reader() {
 
     return 0;
 }
-MSH_CMD_EXPORT(simple_reader, fast json simple reader example);
+MSH_CMD_EXPORT(simple_reader, rapid json simple reader example);

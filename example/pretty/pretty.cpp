@@ -29,4 +29,4 @@ int pretty(int, char*[]) {
 
     return 0;
 }
-MSH_CMD_EXPORT(pretty, fast json pretty example);
+MSH_CMD_EXPORT(pretty, rapid json pretty example);

@@ -61,4 +61,4 @@ int sortkeys() {
 */
 #endif
 }
-MSH_CMD_EXPORT(sortkeys, fast json sort keys example);
+MSH_CMD_EXPORT(sortkeys, rapid json sort keys example);

@@ -286,4 +286,4 @@ int archiver_test() {
     // test2();
     test3();
 }
-MSH_CMD_EXPORT(archiver_test, fast json archiver_test example);
+MSH_CMD_EXPORT(archiver_test, rapid json archiver_test example);

@@ -55,4 +55,4 @@ int pretty_auto(int, char*[]) {
 
     return 0;
 }
-MSH_CMD_EXPORT(pretty_auto, fast json pretty auto example);
+MSH_CMD_EXPORT(pretty_auto, rapid json pretty auto example);

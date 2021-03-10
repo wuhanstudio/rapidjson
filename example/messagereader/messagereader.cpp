@@ -104,4 +104,4 @@ int message_reader() {
 
     return 0;
 }
-MSH_CMD_EXPORT(message_reader, fast json message reader example);
+MSH_CMD_EXPORT(message_reader, rapid json message reader example);

@@ -347,6 +347,6 @@ int look_ahead_parser() {
     
     return 0;
 }
-MSH_CMD_EXPORT(look_ahead_parser, fast json look ahead parser example);
+MSH_CMD_EXPORT(look_ahead_parser, rapid json look ahead parser example);
 
 RAPIDJSON_DIAG_POP

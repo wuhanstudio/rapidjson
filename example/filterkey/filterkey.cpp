@@ -134,4 +134,4 @@ int filter_key(int argc, char* argv[]) {
 
     return 0;
 }
-MSH_CMD_EXPORT(filter_key, fast json filter key example);
+MSH_CMD_EXPORT(filter_key, rapid json filter key example);

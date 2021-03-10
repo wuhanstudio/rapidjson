@@ -31,4 +31,4 @@ int condense(int, char*[]) {
 
     return 0;
 }
-MSH_CMD_EXPORT(condense, fast json condense example);
+MSH_CMD_EXPORT(condense, rapid json condense example);

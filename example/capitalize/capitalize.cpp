@@ -66,4 +66,4 @@ int capitalize(int, char*[]) {
 
     return 0;
 }
-MSH_CMD_EXPORT(capitalize, fast json capitalize example);
+MSH_CMD_EXPORT(capitalize, rapid json capitalize example);

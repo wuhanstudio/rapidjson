@@ -52,4 +52,4 @@ int simple_pull_reader() {
 
     return 0;
 }
-MSH_CMD_EXPORT(simple_pull_reader, fast json simple pull reader example);
+MSH_CMD_EXPORT(simple_pull_reader, rapid json simple pull reader example);

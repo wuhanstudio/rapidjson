@@ -21,16 +21,33 @@ src = []
 
 # src += Glob('example/parsebyparts/parsebyparts.cpp')
 
-src += Glob('example/simplereader/simplereader.cpp')
-src += Glob('example/simplewriter/simplewriter.cpp')
-src += Glob('example/tutorial/tutorial.cpp')
-src += Glob('example/simplepullreader/simplepullreader.cpp')
-src += Glob('example/simpledom/simpledom.cpp')
-src += Glob('example/serialize/serialize.cpp')
-src += Glob('example/messagereader/messagereader.cpp')
-src += Glob('example/lookaheadparser/lookaheadparser.cpp')
-src += Glob('example/archiver/archiver.cpp')
-src += Glob('example/archiver/archivertest.cpp')
+if GetDepend('RAPIDJSON_USING_SIMPLE_READER'):
+	src += Glob('example/simplereader/simplereader.cpp')
+
+if GetDepend('RAPIDJSON_USING_SIMPLE_WRITER'):
+	src += Glob('example/simplewriter/simplewriter.cpp')
+
+if GetDepend('RAPIDJSON_USING_TUTORIAL'):
+	src += Glob('example/tutorial/tutorial.cpp')
+
+if GetDepend('RAPIDJSON_USING_SIMPLE_PULL_READER'):
+	src += Glob('example/simplepullreader/simplepullreader.cpp')
+
+if GetDepend('RAPIDJSON_USING_SIMPLE_DOM'):
+	src += Glob('example/simpledom/simpledom.cpp')
+
+if GetDepend('RAPIDJSON_USING_SERIALIZE'):
+	src += Glob('example/serialize/serialize.cpp')
+
+if GetDepend('RAPIDJSON_USING_MESSAGE_READER'):
+	src += Glob('example/messagereader/messagereader.cpp')
+
+if GetDepend('RAPIDJSON_USING_LOOK_AHEAD_PARSER'):
+	src += Glob('example/lookaheadparser/lookaheadparser.cpp')
+
+if GetDepend('RAPIDJSON_USING_ARCHIVER_TEST'):
+	src += Glob('example/archiver/archiver.cpp')
+	src += Glob('example/archiver/archivertest.cpp')
 
 LOCAL_CCFLAGS = ''
 path   =  [cwd]

@@ -172,4 +172,4 @@ int serialize(int, char*[]) {
 
     return 0;
 }
-MSH_CMD_EXPORT(serialize, fast json serialize example);
+MSH_CMD_EXPORT(serialize, rapid json serialize example);

@@ -35,4 +35,4 @@ int simple_writer() {
 
     return 0;
 }
-MSH_CMD_EXPORT(simple_writer, fast json simple writer example);
+MSH_CMD_EXPORT(simple_writer, rapid json simple writer example);

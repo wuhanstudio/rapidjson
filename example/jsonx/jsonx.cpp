@@ -206,4 +206,4 @@ int jsonx(int, char*[]) {
 
     return 0;
 }
-MSH_CMD_EXPORT(jsonx, fast json look jsonx example);
+MSH_CMD_EXPORT(jsonx, rapid json look jsonx example);

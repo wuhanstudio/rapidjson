@@ -150,4 +150,4 @@ int tutorial(int, char*[]) {
 
     return 0;
 }
-MSH_CMD_EXPORT(tutorial, fast json tutorial);
+MSH_CMD_EXPORT(tutorial, rapid json tutorial);

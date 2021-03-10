@@ -28,4 +28,4 @@ int simple_dom() {
     std::cout << buffer.GetString() << std::endl;
     return 0;
 }
-MSH_CMD_EXPORT(simple_dom, fast json simple dom example);
+MSH_CMD_EXPORT(simple_dom, rapid json simple dom example);

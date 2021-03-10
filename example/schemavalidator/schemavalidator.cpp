@@ -195,4 +195,4 @@ int schema_validator(int argc, char *argv[]) {
         return EXIT_FAILURE;
     }
 }
-MSH_CMD_EXPORT(schema_validator, fast json schema validator example);
+MSH_CMD_EXPORT(schema_validator, rapid json schema validator example);

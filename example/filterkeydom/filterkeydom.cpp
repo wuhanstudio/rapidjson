@@ -169,4 +169,4 @@ int filter_key_dom(int argc, char* argv[]) {
     document.Accept(writer);
     return 0;
 }
-MSH_CMD_EXPORT(filter_key_dom, fast json filter key dom example);
+MSH_CMD_EXPORT(filter_key_dom, rapid json filter key dom example);

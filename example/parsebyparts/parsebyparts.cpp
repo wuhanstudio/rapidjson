@@ -175,6 +175,6 @@ MSH_CMD_EXPORT(parse_by_parts, fast json parse by parts example);
 int parse_by_parts() {
     std::cout << "This example requires C++11 compiler" << std::endl;
 }
-MSH_CMD_EXPORT(parse_by_parts, fast json parse by parts example);
+MSH_CMD_EXPORT(parse_by_parts, rapid json parse by parts example);
 
 #endif
