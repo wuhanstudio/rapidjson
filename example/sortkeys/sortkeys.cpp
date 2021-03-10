@@ -1,3 +1,4 @@
+#include <rtthread.h>
 #include "rapidjson/document.h"
 #include "rapidjson/filewritestream.h"
 #include <rapidjson/prettywriter.h>
@@ -22,7 +23,7 @@ struct NameComparator {
     }
 };
 
-int main() {
+int sortkeys() {
     Document d(kObjectType);
     Document::AllocatorType &allocator = d.GetAllocator();
 
@@ -60,3 +61,4 @@ int main() {
 */
 #endif
 }
+MSH_CMD_EXPORT(sortkeys, fast json sort keys example);

@@ -1,3 +1,4 @@
+#include <rtthread.h>
 #include "rapidjson/reader.h"
 #include <iostream>
 
@@ -30,7 +31,7 @@ struct MyHandler {
     bool EndArray(SizeType elementCount) { cout << "EndArray(" << elementCount << ")" << endl; return true; }
 };
 
-int main() {
+int simple_reader() {
     const char json[] = " { \"hello\" : \"world\", \"t\" : true , \"f\" : false, \"n\": null, \"i\":123, \"pi\": 3.1416, \"a\":[1, 2, 3, 4] } ";
 
     MyHandler handler;
@@ -40,3 +41,4 @@ int main() {
 
     return 0;
 }
+MSH_CMD_EXPORT(simple_reader, fast json simple reader example);

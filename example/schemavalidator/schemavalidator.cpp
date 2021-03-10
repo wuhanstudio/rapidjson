@@ -2,6 +2,7 @@
 
 // The example validates JSON text from stdin with a JSON schema specified in the argument.
 
+#include <rtthread.h>
 #include "rapidjson/error/en.h"
 #include "rapidjson/filereadstream.h"
 #include "rapidjson/schema.h"
@@ -125,7 +126,7 @@ static void CreateErrorMessages(const ValueType& errors, size_t depth = 0, const
     }
 }
 
-int main(int argc, char *argv[]) {
+int schema_validator(int argc, char *argv[]) {
     if (argc != 2) {
         fprintf(stderr, "Usage: schemavalidator schema.json < input.json\n");
         return EXIT_FAILURE;
@@ -194,3 +195,4 @@ int main(int argc, char *argv[]) {
         return EXIT_FAILURE;
     }
 }
+MSH_CMD_EXPORT(schema_validator, fast json schema validator example);

@@ -1,6 +1,7 @@
 // Reading a message JSON with Reader (SAX-style API).
 // The JSON should be an object with key-string pairs.
 
+#include <rtthread.h>
 #include "rapidjson/reader.h"
 #include "rapidjson/error/en.h"
 #include <iostream>
@@ -86,7 +87,7 @@ static void ParseMessages(const char* json, MessageMap& messages) {
     }
 }
 
-int main() {
+int message_reader() {
     MessageMap messages;
 
     const char* json1 = "{ \"greeting\" : \"Hello!\", \"farewell\" : \"bye-bye!\" }";
@@ -103,3 +104,4 @@ int main() {
 
     return 0;
 }
+MSH_CMD_EXPORT(message_reader, fast json message reader example);

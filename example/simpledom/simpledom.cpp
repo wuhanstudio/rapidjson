@@ -1,6 +1,7 @@
 // JSON simple example
 // This example does not handle errors.
 
+#include <rtthread.h>
 #include "rapidjson/document.h"
 #include "rapidjson/writer.h"
 #include "rapidjson/stringbuffer.h"
@@ -8,7 +9,7 @@
 
 using namespace rapidjson;
 
-int main() {
+int simple_dom() {
     // 1. Parse a JSON string into DOM.
     const char* json = "{\"project\":\"rapidjson\",\"stars\":10}";
     Document d;
@@ -27,3 +28,4 @@ int main() {
     std::cout << buffer.GetString() << std::endl;
     return 0;
 }
+MSH_CMD_EXPORT(simple_dom, fast json simple dom example);

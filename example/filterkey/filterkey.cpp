@@ -4,6 +4,7 @@
 // During parsing, specified key will be filtered using a SAX handler.
 // It re-output the JSON content to stdout without whitespace.
 
+#include <rtthread.h>
 #include "rapidjson/reader.h"
 #include "rapidjson/writer.h"
 #include "rapidjson/filereadstream.h"
@@ -105,7 +106,7 @@ private:
     std::stack<SizeType> filteredKeyCount_;
 };
 
-int main(int argc, char* argv[]) {
+int filter_key(int argc, char* argv[]) {
     if (argc != 2) {
         fprintf(stderr, "filterkey key < input.json > output.json\n");
         return 1;
@@ -113,11 +114,11 @@ int main(int argc, char* argv[]) {
 
     // Prepare JSON reader and input stream.
     Reader reader;
-    char readBuffer[65536];
+    char readBuffer[1024];
     FileReadStream is(stdin, readBuffer, sizeof(readBuffer));
 
     // Prepare JSON writer and output stream.
-    char writeBuffer[65536];
+    char writeBuffer[1024];
     FileWriteStream os(stdout, writeBuffer, sizeof(writeBuffer));
     Writer<FileWriteStream> writer(os);
 
@@ -133,3 +134,4 @@ int main(int argc, char* argv[]) {
 
     return 0;
 }
+MSH_CMD_EXPORT(filter_key, fast json filter key example);

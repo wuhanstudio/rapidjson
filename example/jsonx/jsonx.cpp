@@ -5,6 +5,7 @@
 // and convert to JSONx format to stdout.
 // Need compile with -D__STDC_FORMAT_MACROS for defining PRId64 and PRIu64 macros.
 
+#include <rtthread.h>
 #include "rapidjson/reader.h"
 #include "rapidjson/stringbuffer.h"
 #include "rapidjson/filereadstream.h"
@@ -186,14 +187,14 @@ private:
     bool hasName_;
 };
 
-int main(int, char*[]) {
+int jsonx(int, char*[]) {
     // Prepare JSON reader and input stream.
     Reader reader;
-    char readBuffer[65536];
+    char readBuffer[1024];
     FileReadStream is(stdin, readBuffer, sizeof(readBuffer));
 
     // Prepare JSON writer and output stream.
-    char writeBuffer[65536];
+    char writeBuffer[1024];
     FileWriteStream os(stdout, writeBuffer, sizeof(writeBuffer));
     JsonxWriter<FileWriteStream> writer(os);
 
@@ -205,3 +206,4 @@ int main(int, char*[]) {
 
     return 0;
 }
+MSH_CMD_EXPORT(jsonx, fast json look jsonx example);

@@ -5,6 +5,7 @@
 // And finally the filtered events are used to populate a Document.
 // As an example, the document is written to standard output.
 
+#include <rtthread.h>
 #include "rapidjson/document.h"
 #include "rapidjson/writer.h"
 #include "rapidjson/filereadstream.h"
@@ -137,14 +138,14 @@ private:
     ParseResult parseResult_;
 };
 
-int main(int argc, char* argv[]) {
+int filter_key_dom(int argc, char* argv[]) {
     if (argc != 2) {
         fprintf(stderr, "filterkeydom key < input.json > output.json\n");
         return 1;
     }
 
     // Prepare input stream.
-    char readBuffer[65536];
+    char readBuffer[1024];
     FileReadStream is(stdin, readBuffer, sizeof(readBuffer));
 
     // Prepare Filter
@@ -160,7 +161,7 @@ int main(int argc, char* argv[]) {
     }
 
     // Prepare JSON writer and output stream.
-    char writeBuffer[65536];
+    char writeBuffer[1024];
     FileWriteStream os(stdout, writeBuffer, sizeof(writeBuffer));
     Writer<FileWriteStream> writer(os);
 
@@ -168,3 +169,4 @@ int main(int argc, char* argv[]) {
     document.Accept(writer);
     return 0;
 }
+MSH_CMD_EXPORT(filter_key_dom, fast json filter key dom example);

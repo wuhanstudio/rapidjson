@@ -1,3 +1,4 @@
+#include <rtthread.h>
 #include "archiver.h"
 #include <iostream>
 #include <vector>
@@ -280,8 +281,9 @@ void test3() {
 
 //////////////////////////////////////////////////////////////////////////////
 
-int main() {
+int archiver_test() {
     test1();
-    test2();
+    // test2();
     test3();
 }
+MSH_CMD_EXPORT(archiver_test, fast json archiver_test example);

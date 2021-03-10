@@ -1,3 +1,4 @@
+#include <rtthread.h>
 #include "rapidjson/reader.h"
 #include <iostream>
 #include <sstream>
@@ -37,7 +38,7 @@ private:
     MyHandler& operator=(const MyHandler& noAssignment);
 };
 
-int main() {
+int simple_pull_reader() {
     const char json[] = " { \"hello\" : \"world\", \"t\" : true , \"f\" : false, \"n\": null, \"i\":123, \"pi\": 3.1416, \"a\":[1, 2, 3, 4] } ";
 
     MyHandler handler;
@@ -51,3 +52,4 @@ int main() {
 
     return 0;
 }
+MSH_CMD_EXPORT(simple_pull_reader, fast json simple pull reader example);

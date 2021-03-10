@@ -2,6 +2,8 @@
 
 // Using C++11 threads
 // Temporarily disable for clang (older version) due to incompatibility with libstdc++
+#include <rtthread.h>
+
 #if (__cplusplus >= 201103L || (defined(_MSC_VER) && _MSC_VER >= 1700)) && !defined(__clang__)
 
 #include "rapidjson/document.h"
@@ -136,7 +138,7 @@ private:
     bool completed_;
 };
 
-int main() {
+int parse_by_parts() {
     Document d;
 
     {
@@ -165,12 +167,14 @@ int main() {
 
     return EXIT_SUCCESS;
 }
+MSH_CMD_EXPORT(parse_by_parts, fast json parse by parts example);
 
 #else // Not supporting C++11 
 
 #include <iostream>
-int main() {
+int parse_by_parts() {
     std::cout << "This example requires C++11 compiler" << std::endl;
 }
+MSH_CMD_EXPORT(parse_by_parts, fast json parse by parts example);
 
 #endif

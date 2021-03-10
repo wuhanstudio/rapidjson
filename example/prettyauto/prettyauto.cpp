@@ -2,6 +2,7 @@
 // This example can handle UTF-8/UTF-16LE/UTF-16BE/UTF-32LE/UTF-32BE.
 // The input firstly convert to UTF8, and then write to the original encoding with pretty formatting.
 
+#include <rtthread.h>
 #include "rapidjson/reader.h"
 #include "rapidjson/prettywriter.h"
 #include "rapidjson/filereadstream.h"
@@ -15,7 +16,7 @@
 
 using namespace rapidjson;
 
-int main(int, char*[]) {
+int pretty_auto(int, char*[]) {
 #ifdef _WIN32
     // Prevent Windows converting between CR+LF and LF
     _setmode(_fileno(stdin), _O_BINARY);    // NEW
@@ -25,12 +26,12 @@ int main(int, char*[]) {
     // Prepare reader and input stream.
     //Reader reader;
     GenericReader<AutoUTF<unsigned>, UTF8<> > reader;       // CHANGED
-    char readBuffer[65536];
+    char readBuffer[1024];
     FileReadStream is(stdin, readBuffer, sizeof(readBuffer));
     AutoUTFInputStream<unsigned, FileReadStream> eis(is);   // NEW
 
     // Prepare writer and output stream.
-    char writeBuffer[65536];
+    char writeBuffer[1024];
     FileWriteStream os(stdout, writeBuffer, sizeof(writeBuffer));
 
 #if 1
@@ -54,3 +55,4 @@ int main(int, char*[]) {
 
     return 0;
 }
+MSH_CMD_EXPORT(pretty_auto, fast json pretty auto example);

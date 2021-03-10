@@ -1,3 +1,4 @@
+#include <rtthread.h>
 #include "rapidjson/writer.h"
 #include "rapidjson/stringbuffer.h"
 #include <iostream>
@@ -5,7 +6,7 @@
 using namespace rapidjson;
 using namespace std;
 
-int main() {
+int simple_writer() {
     StringBuffer s;
     Writer<StringBuffer> writer(s);
     
@@ -34,3 +35,4 @@ int main() {
 
     return 0;
 }
+MSH_CMD_EXPORT(simple_writer, fast json simple writer example);

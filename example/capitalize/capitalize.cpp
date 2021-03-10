@@ -3,6 +3,7 @@
 // This example parses JSON from stdin with validation, 
 // and re-output the JSON content to stdout with all string capitalized, and without whitespace.
 
+#include <rtthread.h>
 #include "rapidjson/reader.h"
 #include "rapidjson/writer.h"
 #include "rapidjson/filereadstream.h"
@@ -45,14 +46,14 @@ private:
     CapitalizeFilter& operator=(const CapitalizeFilter&);
 };
 
-int main(int, char*[]) {
+int capitalize(int, char*[]) {
     // Prepare JSON reader and input stream.
     Reader reader;
-    char readBuffer[65536];
+    char readBuffer[1024];
     FileReadStream is(stdin, readBuffer, sizeof(readBuffer));
 
     // Prepare JSON writer and output stream.
-    char writeBuffer[65536];
+    char writeBuffer[1024];
     FileWriteStream os(stdout, writeBuffer, sizeof(writeBuffer));
     Writer<FileWriteStream> writer(os);
 
@@ -65,3 +66,4 @@ int main(int, char*[]) {
 
     return 0;
 }
+MSH_CMD_EXPORT(capitalize, fast json capitalize example);

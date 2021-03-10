@@ -1,3 +1,4 @@
+#include <rtthread.h>
 #include "rapidjson/reader.h"
 #include "rapidjson/document.h"
 #include <iostream>
@@ -282,7 +283,7 @@ int LookaheadParser::PeekType() {
 
 //-------------------------------------------------------------------------
 
-int main() {
+int look_ahead_parser() {
     using namespace std;
 
     char json[] = " { \"hello\" : \"world\", \"t\" : true , \"f\" : false, \"n\": null,"
@@ -346,5 +347,6 @@ int main() {
     
     return 0;
 }
+MSH_CMD_EXPORT(look_ahead_parser, fast json look ahead parser example);
 
 RAPIDJSON_DIAG_POP

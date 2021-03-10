@@ -1,6 +1,7 @@
 // Hello World example
 // This example shows basic usage of DOM-style API.
 
+#include <rtthread.h>
 #include "rapidjson/document.h"     // rapidjson's DOM-style API
 #include "rapidjson/prettywriter.h" // for stringify JSON
 #include <cstdio>
@@ -8,7 +9,7 @@
 using namespace rapidjson;
 using namespace std;
 
-int main(int, char*[]) {
+int tutorial(int, char*[]) {
     ////////////////////////////////////////////////////////////////////////////
     // 1. Parse a JSON text string to a document.
 
@@ -149,3 +150,4 @@ int main(int, char*[]) {
 
     return 0;
 }
+MSH_CMD_EXPORT(tutorial, fast json tutorial);

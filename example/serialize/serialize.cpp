@@ -1,6 +1,7 @@
 // Serialize example
 // This example shows writing JSON string with writer directly.
 
+#include <rtthread.h>
 #include "rapidjson/prettywriter.h" // for stringify JSON
 #include <cstdio>
 #include <string>
@@ -150,7 +151,7 @@ private:
 Employee::~Employee() {
 }
 
-int main(int, char*[]) {
+int serialize(int, char*[]) {
     std::vector<Employee> employees;
 
     employees.push_back(Employee("Milo YIP", 34, true));
@@ -171,3 +172,4 @@ int main(int, char*[]) {
 
     return 0;
 }
+MSH_CMD_EXPORT(serialize, fast json serialize example);
